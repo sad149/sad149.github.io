@@ -2,8 +2,7 @@
 Amarillo patito: #fabf00
 Blue Grey:  #6699CC
 */
-
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 :root {
     --secondary: #58ff00;
@@ -14,6 +13,16 @@ Blue Grey:  #6699CC
 
 html {
     scroll-behavior: smooth;
+}
+
+.background-gradient {
+    background-image: linear-gradient(#012456, black);
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: -1000;
 }
 
 *{
@@ -30,14 +39,38 @@ html {
     overflow-x: hidden;
 }
 
-body {
-    background-color: #012456;
-    color: #eeedf0;
-    font-family: "Inconsolata", monospace;
+.code-container {
+    clear: both;
+    background-color: rgba(42, 42, 42, 0.3);
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid rgb(42, 42, 42);
 }
 
-.home {
-    padding-top: 50px;
+.code-container code {
+    font-family: monospace;
+}
+
+.article-link {
+    clear: both;
+    background-color: rgba(42, 42, 42, 0.3);
+    padding: 20px;
+    border-radius: 4px;
+    border: 1px solid rgb(42, 42, 42);
+}
+
+body {
+    color: #eeedf0;
+    font-family: "Ubuntu", sans-serif;
+    height: 100%;
+}
+
+section {
+    padding-top: 50px !important;
+}
+
+.home-content {
+    margin-top: 50px;
 }
 
 .home-content img {
@@ -49,6 +82,8 @@ body {
 
 footer {
     text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 footer a:visited {
@@ -118,6 +153,10 @@ footer img{
 
     .about .about-content .right{
         flex: 100%;
+    }
+
+    footer {
+        margin-bottom: 10px;
     }
 }
 
