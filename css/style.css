@@ -1,0 +1,162 @@
+/* P A L E T T E
+Amarillo patito: #fabf00
+Blue Grey:  #6699CC
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+:root {
+    --secondary: #58ff00;
+    --primary: #ffffff;
+}
+
+/*global styling*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.max-width {
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #012456;
+    color: #eeedf0;
+    font-family: "Inconsolata", monospace;
+}
+
+.home {
+    padding-top: 50px;
+}
+
+.home-content img {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    text-align: center;
+}
+
+footer a:visited {
+    color: var(--secondary);
+}
+
+footer img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    height: 80px;
+    width: auto;
+}
+
+
+
+
+/* Responsive media query */
+
+@media (max-width: 1300px) {
+}
+
+@media (max-width: 1104px) {
+}
+
+@media (max-width: 991px) {
+    .max-width {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 947px) {
+
+    .max-width{
+        max-width: 800px;
+    }
+
+    .home .home-content .text-2 {
+        font-size:  70px;
+    }
+
+    .home .home-content .text-3 {
+        font-size:  35px;
+    }
+
+    .home .home-content a{
+        font-size: 23px;
+        padding: 10px 30px;
+    }
+    
+    .home-content img {
+        width: 100%;
+    }
+
+    /*about*/
+
+    .about .about-content .column{
+        width: 100%;
+    }
+
+    .about .about-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+
+    .about .about-content .right{
+        flex: 100%;
+    }
+}
+
+@media (max-width: 690px) {
+    /*690 global*/
+    .max-width {
+        padding: 23px;
+    }
+    section .title::before{
+        width: 400px;
+    }
+
+    section .title::after{
+        font-size: 12px;
+    }
+
+    /*690 home*/
+
+    .home .home-content .text-2 {
+        font-size:  60px;
+    }
+
+    .home .home-content .text-3 {
+        font-size:  32px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .home .home-content .text-2 {
+        font-size:  50px;
+    }
+
+    .home .home-content .text-3 {
+        font-size:  27px;
+    }
+    section .title::before{
+        width: 300px;
+    }
+}
