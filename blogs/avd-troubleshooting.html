@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<!--Social media icons -->
+		<link rel="icon" type="img/ico" href="../assets/icon.ico">
+
+		<title>Saadin Dassum - AVD Boot-up Troubleshooting</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="AVD Boot-up Troubleshooting">
+		<meta name="keywords" content="Saadin Dassum, programming, App Development, AVD, Android">
+		<meta name="author" content="Saadin Dassum">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="og:image" content="http://saadindassum.com/assets/avd-blog-assets/dead-avd.png">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="http://dev.saadindassum.com/">
+		<meta property="og:title" content="AVD Boot-up Troubleshooting">
+		<meta property="og:description" content="SD Dev site">
+
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<link rel="stylesheet" type="text/css" href="../css/navbar.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+	</head>
+	<body>
+		<div class="background-gradient"></div>
+		<div class="scroll-up-btn">
+			<i class="fas fa-angle-up"></i>
+		</div>
+		<!-- N A V B A R -->
+		<nav class="navbar">
+			<div class="max-width">
+				<div class="logo"><a href="../index.html"><img src="../assets/simple-dev-logo.png" id="logo" alt="logo.png"></a></div>
+				<ul class='menu'>
+					<li><a href='../index.html' class="menu-btn">Home</a></li>
+					<li><a href='https://www.saadindassum.com/' class="menu-btn">Music</a></li>
+					<!--div class="desk-socials"-->
+					<!--commented out because div as a child of ul isn't allowed, but I still want to know these are contained here-->
+						<li><a href='https://songadget.app/'><img id="sg-logo-desktop" class="navbar-image" src="../assets/sg-icon.png" alt="Songadget logo"></a></li>
+						<!-- <li><a href='https://www.tiktok.com/@saadindassum'><i class="fa-brands fa-tiktok social desk-socials"></i></a></li>
+						<li><a href='https://open.spotify.com/artist/0USg6VGxyTCghZFPGRKBwL?si=973b3728a0674e7c'><i class="fa-brands fa-spotify desk-socials"></i></a></li>
+						<li><a href='https://music.apple.com/us/artist/saadin-dassum/1469155696'><i class="fa-brands fa-apple desk-socials"></i></a></li> -->
+					<!--/div-->
+					<!-- <li class="mobile-item">
+						<a href='https://www.instagram.com/saadindassum/' class="social"><i class="fa-brands fa-instagram"></i></a>
+						<a href='https://www.tiktok.com/@saadindassum' class="social"><i class="fa-brands fa-tiktok"></i></a>
+						<a href='https://open.spotify.com/artist/0USg6VGxyTCghZFPGRKBwL?si=973b3728a0674e7c' class="social"><i class="fa-brands fa-spotify"></i></a>
+						<a href='https://music.apple.com/us/artist/saadin-dassum/1469155696' class="social"><i class="fa-brands fa-apple"></i></a>
+					</li> -->
+				</ul>
+				<div class="menu-btn">
+					<i class="fas fa-bars"></i>
+				</div>
+
+			</div>
+		</nav>
+
+		<!-- A R T I C L E  S T A R T-->
+		<section id="article-heading" class="max-width" id="home">
+			<h1>AVD Troubleshooting</h1>
+            <p id="date">April 10, 2024</p>
+		</section>
+		<section class="foreword max-width">
+			<p>&emsp;I hear the Android Emulator is great on Mac. Unfortunately, my Mac's off for maintenance this week, and my PC is my main rig anyway. I've been coding an intricate search engine for months now, so boy was it a hell of a surprise
+                finding out my emulator had gone belly up.<br><br>
+
+                &emsp;This isn't the first time I've run into this problem, and one of my biggest frustrations while coding apps is dealing with crappy emulators. So I figure it's time to write stuff down. It just so happens, that sounds like a neat
+				first blog entry.<br><br>
+				
+				&emsp;All of the steps I describe have solved AVD issues for me in the past, and they go from simplest to most annoying, so no overkill in case it's a simple solution. If one of the earlier steps solves the issue, Great! If not, keep
+				reading. And just as a heads up for my noobs out there, AVD stands for Android Virtual Device, so if I'm talking about the AVD, I'm talking about the emulator. That's right noobs, you are seen, and you are loved.<br><br>
+                
+                &emsp;So what's the issue? When I run my Flutter app, the android emulator gets stuck on a black screen. Doesn't sound too bad, right?<br><br>
+                <img class="centered-image vertical-image" alt="Dead AVD" src="../assets/avd-blog-assets/black-screen-android.JPG">
+			</p>
+		</section>
+
+        <section class="article max-width">
+            <h2>Solutions</h2><br><br>
+            &emsp;<strong>1. Wipe the data from the AVD.</strong> On the Device Manager (<code class="inline">Tools &lt; Device Manager</code>), stop the device. Then click those three vertical dots next to it, and click Wipe Data. This one should get rid of small problems caused
+            by the emulated software. Note that this can only be done when the AVD is stopped.<br><br>
+            
+			<span style="color:crimson">New Problem</span><br>
+            &emsp;Alright, now my AVD isn't booting up at all. It's stuck on the 'Connecting to the Emulator' screen.<br><br>
+
+            <img src="../assets/avd-blog-assets/connecting-to-the-emulator.JPG" alt="connecting to emulator screenshot" class="horizontal-image"><br><br>
+            
+            &emsp;<strong>2. Delete the device.</strong> You're gonna need to stop the device, but Android Studio might not wanna do it. Spoken from experience. So ctrl+alt+delete your way to the task manager, and check all processes starting with E.
+			If there's one called Emulator with an icon a bit like this one, terminate it.<br><br>
+            
+            <img src="../assets/avd-blog-assets/emulator-executable.JPG" alt="emu-executable" class="horizontal-image"><br><br>
+
+            &emsp;Hold up though, there's more processes related to the emulator that you need to end. AVD processes that I've encountered in the Task Manager are <em>Emulator</em>, something called
+			<a href="https://manpages.debian.org/testing/qemu-system-x86/qemu-system-x86_64.1.en.html"><em>qemu_system</em></a>, and something called <a href="https://developer.android.com/tools/adb"><em>adb.exe</em></a>. There's also <em>Android
+			Studio</em>, but we wanna keep that one running. Once those processes are out of
+			the picture, fire up Android Studio again, go to the Device Manager, click on those three dots next to your AVD, and delete the device. If the thing prompts you that not all the files were deleted, it's not too big a deal. If they bother you,
+			you can delete them by clicking 'Open Directory' on that notification, and deleting them through the explorer, but you won't be allowed if you haven't terminated those processes I told you about.<br><br>
+            
+            &emsp;Once you're done with this, click the '+' sign on the Device Manager (or 'Add Device' on older versions), and go through your usual steps of creating a device.<br><br>
+
+            <span style="color:crimson">New Problem</span><br>
+            &emsp;My new device is still forever stuck on 'Connecting to the Emulator'. No joke, I left this thing going while I went to watch an episode of Narcos, and it didn't budge. Pablo Escobar built an evil empire and got freaking shot and my AVD
+			still didn't want to work.<br><br>
+
+            <img src="https://content.imageresizer.com/images/memes/Sad-Pablo-Escobar-meme-1c1uej.jpg" alt="Sad Pablo Escobar" class="vertical-image"><br><br>
+            
+            &emsp;<strong>3. Update the AVD.</strong> Even if you're on the latest version of Android Studio, that doesn't mean its components are up to date. Including the AVD. To check for updates, go to <code class="inline">Help &lt; Check For Updates</code>. If an
+            update is available, you should get a notification on the bottom-right, on which you can click the text 'update'. An installer will boot up, make sure you give it administrator permissions, as well as the terminal if it pops up.<br><br>
+            
+            <img src="../assets/avd-blog-assets/install-error.JPG" alt="install-error" class="horizontal-image"><br><br>
+
+            &emsp;Oh, what's that? The installer had a problem? Check that all the AVD processes I described on step 2 are terminated. If you terminate one process but not all, you might get different error messages. Wanna see the log? Go <code class="inline">Help &lt;
+            Show log in explorer</code>. I didn't find the info in that file incredibly helpful though.<br><br>
+            
+			<span style="color:greenyellow">Solved!</span><br>
+            &emsp;Cool, this did it for me this time! Now my emulator boots up, and I can keep going about my search engine stuff. Again, my best guess is that whatever update Microsoft rolled out last night was incompatible with the AVD version I had. To hell
+            with backwards compatibility I guess.
+			<img src="https://media.tenor.com/lCKwsD2OW1kAAAAj/happy-cat-happy-happy-cat.gif"><br><br>
+            
+            &emsp;However, there's been times where even this didn't fix my issue. So I'll provide two final options for you.<br><br>
+
+			<span style="color:orange">In case it didn't work:</span><br>
+            &emsp;<strong>4. Restart the PC.</strong> Yeah yeah, hAvE yOu tRiEd tUrNiNg iT oFf aNd tHeN tUrNiNg iT oN aGaIn? Trust me, it's worth a shot at least trying it before the next step. First check for the update on step 4, then restart.<br><br>
+            
+            &emsp;<strong>5. Uninstall Android Studio and Install it again.</strong> And make sure when you uninstall you check the option to get rid of all your user settings. This is the nuclear option when working with any computer. Getting rid of
+            everything and going back to something that you know for a fact works. It feels excrutiating, but it helps you figure out what's wrong..<br><br>
+            
+            &emsp;Hopefully that was a nice little guide for anyone working Windows that's either new to Android Studio, or doesn't know its ins and outs because they only use it to manage the emulator.<br><br>
+
+			&emsp;Disclaimer: Emulators are difficult to code, and I may be poking fun at them, but I do not take them for granted. Please do not smite me, oh mighty Google overlords.
+        </section>
+		<footer>
+			<img src="../assets/full-sd-logo.png" alt="Saadin Dassum logo">
+			<span>Created by<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> Saadin Dassum </a> 
+				<span class="far fa-copyright"></span>2024 All Rights Reserved. 
+			</span>
+			<br>
+		</footer>
+		<script src="script.js"></script>
+	</body>
+	<script>
+		var sgLogo = document.getElementById("sg-logo-desktop");
+		sgLogo.onmouseover = function() {
+			sgLogo.src = "../assets/sg-icon-green.png";
+		}
+		sgLogo.onmouseleave = function() {
+			sgLogo.src = "../assets/sg-icon.png";
+		}
+	</script>
+</html>
