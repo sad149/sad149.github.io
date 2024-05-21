@@ -216,13 +216,13 @@
 			<div class="image-caption">POV: An Apple fan kindly explains why his machine is better than yours.</div><br><br>
 			&emsp;Well, all GitHub queries were leading me to no success, and what I failed to notice sooner is that was all due to my setup. I do most of my work outside of my Mac, and that's something I never realized was important until I dove into the details
 			of CocoaPods.<br><br>
-			&emsp;Those of you with a similar workflow, run a little test with me, will you? This is the 'Science' part of 'Computer Science'.
+			&emsp;Those of you with a similar workflow, run a little test with me, will you? This is the 'Science' part of 'Computer Science'.<br><br>
 			<ol>
 				<li>Get on your main (Non-Mac) rig, and create a new Flutter project.</li>
 				<li>Open it up in Visual Studio (or whatever IDE)</li>
 				<li>On the IDE's file explorer, expand the iOS folder to see its contents.</li>
 				<li>Now, try <code class="inline">flutter pub add image_cropper</code>. FYI I'm using this dependency because I know it's supposed to throw in a pod.</li>
-			</ol>
+			</ol><br><br>
 			
 			&emsp;After you run the command, you'll notice that the ios directory remains unchanged. Lame, right? Well, go repeat the same experiment on your Mac. What happens in the iOS folder?<br><br>
 			&emsp;Yeah! Podfile is created... Now run the app on your different machines! You'll notice on your Mac, your iOS folder will now have a Pods subdirectory, as well as a Podfile.lock file. And on your Windows/Linux, it will remain unchanged.<br><br>
