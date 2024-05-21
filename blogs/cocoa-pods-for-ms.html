@@ -167,8 +167,8 @@
 
 			&emsp;<code class="inline">pod outdated</code> - Lists pods that have a newer version available, but does NOT update the pods to their newer version.<br><br>
 
-			&emsp;<code class="inline">pod update &lt;PODNAME&gt;</code> - Updates a specific pod, or all pods if you don't specify a pod name. Works as long as the new version matches the restriction. When you run the command, the command will print out what pods will be
-			updated, and then prompt asking if you want to go through with it. Pod names will be highlighted in three colors, each meaning something different:
+			&emsp;<code class="inline">pod update &lt;PODNAME&gt;</code> - Updates a specific pod, or all pods if you don't specify a pod name. Works as long as the new version matches the restrictions. When you run the command, the command will print out what pods need
+			an update, and then prompt asking if you want to go through with it. Pod names will be highlighted in three colors, each meaning something different will happen to each of them:
 			<ul>
 				<li><span style="color: crimson;">Red</span> - Pod will not be updated due to Podfile restrictions.</li>
 				<li><span style="color: yellowgreen;">Green</span> - Pod will be updated to the latest version.</li>
@@ -176,8 +176,8 @@
 			</ul><br><br>
 			&emsp;Keep in mind you can't update a pod past what's on the spec repo. And don't worry, you didn't skip anything. I'll be talking about the spec repo in a bit.<br><br>
 
-			&emsp;<code class="inline">pod repo update &lt;REPO_NAME&gt;</code> - Updates the local clone of the spec-repo &lt;REPO_NAME&gt;. If you don't specify a name, the command updates all local spec repos. And don't worry, that doesn't sound like English to me either.
-			I'll tell you more about this in a bit.<br><br>
+			&emsp;<code class="inline">pod repo update &lt;REPO_NAME&gt;</code> - Updates the local clone of the spec-repo &lt;REPO_NAME&gt;. If you don't specify a name, the command updates all local spec repos. And don't worry, that doesn't sound like English to
+			me, either. I'll tell you more about this in a bit.<br><br>
 
 			<h2>Pods on Pods on Pods...</h2><br>
 			<img src="https://media1.giphy.com/media/W80Y9y1XwiL84/giphy.gif?cid=6c09b952gp3yw8bdda7mngpzpu2jay7xtd0t8fte3oo0cybh&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Gif of Shaquille O'Neal and Cat shaking around."><br>
@@ -188,7 +188,7 @@
 
 			<h2>What is a Spec?</h2><br>
 			&emsp;Before we jump into spec repos, we have to know what exactly specs are. 'Specs' is short for specifications, and specifications describe traits for pod versions. A spec file is in json format, and contains traits for a version of a pod, most
-			importantly, a source where you can download the pod, a source file subdirectory, and and dependencies. It's also got some other traits, like a name, a version, a summary, a description a license... You can look at them yourself when I tell you about
+			importantly, a source where you can download the pod, a source file subdirectory, and dependencies. It's also got some other traits, like a name, a version, a summary, a description a license... You can look at them yourself when I tell you about
 			spec repos.<br><br>
 			&emsp;What's the importance of these? Well, the folder where these specs are kept is where your pod commands often look in order to throw errors, find incompatibilities, and generally mess your day up. That's why a lot of posts on Stack Overflow will
 			tell you that your problems will be fixed by running pod repo update. It will update the specs for your pods, and hopefully tell the command line "hey, it turns out these two pod versions are ACTUALLY compatible". And sometimes it works.
@@ -207,7 +207,7 @@
 			&emsp;At some point when installing a pod, the specs for your pod are cloned from the repo and onto your machine. However, they might get updated on the repo as updates roll in for other dependencies, and as things change. When running pod repo update,
 			you'll be cloning from that Github repo.<br><br>
 
-			<h2>Final Suggestion</h2><br>
+			<h2>Source Control Tip</h2><br>
 			&emsp;When pulling from source control, if your Podfile or Podfile.lock has changed, run <code class="inline">pod install</code>. That will keep your pods consistent with your team's.<br><br>
 
 			<h2>What about the Non-Mac Flutter Dev?</h2><br>
