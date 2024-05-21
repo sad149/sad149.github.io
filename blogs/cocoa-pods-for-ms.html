@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<!--Social media icons -->
+		<link rel="icon" type="img/ico" href="../assets/icon.ico">
+
+		<title>Saadin Dassum - CocoaPods for the Non-Mac Flutter Dev</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="CocoaPods for Non-Mac Flutter Devs">
+		<meta name="keywords" content="Saadin Dassum, programming, App Development, Flutter, CocoaPods, iOS">
+		<meta name="author" content="Saadin Dassum">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="og:image" content="http://saadindassum.com/assets/pod-blog-assets/pod-thumb.png.jpg">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="http://dev.saadindassum.com/">
+		<meta property="og:title" content="CocoaPods for Non-Mac Flutter Devs">
+		<meta property="og:description" content="SD Dev site">
+
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<link rel="stylesheet" type="text/css" href="../css/navbar.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+	</head>
+	<body>
+		<div class="background-gradient"></div>
+		<div class="scroll-up-btn">
+			<i class="fas fa-angle-up"></i>
+		</div>
+		<!-- N A V B A R -->
+		<nav class="navbar">
+			<div class="max-width">
+				<div class="logo"><a href="../index.html"><img src="../assets/simple-dev-logo.png" id="logo" alt="logo.png"></a></div>
+				<ul class='menu'>
+					<li><a href='../index.html' class="menu-btn">Home</a></li>
+					<li><a href='https://www.saadindassum.com/' class="menu-btn">Music</a></li>
+					<!--div class="desk-socials"-->
+					<!--commented out because div as a child of ul isn't allowed, but I still want to know these are contained here-->
+						<li><a href='https://songadget.app/'><img id="sg-logo-desktop" class="navbar-image" src="../assets/sg-icon.png" alt="Songadget logo"></a></li>
+						<!-- <li><a href='https://www.tiktok.com/@saadindassum'><i class="fa-brands fa-tiktok social desk-socials"></i></a></li>
+						<li><a href='https://open.spotify.com/artist/0USg6VGxyTCghZFPGRKBwL?si=973b3728a0674e7c'><i class="fa-brands fa-spotify desk-socials"></i></a></li>
+						<li><a href='https://music.apple.com/us/artist/saadin-dassum/1469155696'><i class="fa-brands fa-apple desk-socials"></i></a></li> -->
+					<!--/div-->
+					<!-- <li class="mobile-item">
+						<a href='https://www.instagram.com/saadindassum/' class="social"><i class="fa-brands fa-instagram"></i></a>
+						<a href='https://www.tiktok.com/@saadindassum' class="social"><i class="fa-brands fa-tiktok"></i></a>
+						<a href='https://open.spotify.com/artist/0USg6VGxyTCghZFPGRKBwL?si=973b3728a0674e7c' class="social"><i class="fa-brands fa-spotify"></i></a>
+						<a href='https://music.apple.com/us/artist/saadin-dassum/1469155696' class="social"><i class="fa-brands fa-apple"></i></a>
+					</li> -->
+				</ul>
+				<div class="menu-btn">
+					<i class="fas fa-bars"></i>
+				</div>
+
+			</div>
+		</nav>
+
+		<!-- A R T I C L E  S T A R T-->
+		<section id="article-heading" class="max-width" id="home">
+			<h1>CocoaPods for the Non-Mac Flutter Dev</h1>
+            <p id="date">May 20, 2024</p>
+		</section>
+		<section class="foreword max-width">
+			<p>&emsp;Are you a Flutter dev? Do you code mostly on Windows or Linux? And do you still intend to release your stuff on iOS using a Mac as a secondary device? Odds are you've run into issues with a little something called CocoaPods. In this
+				blog, I'll give you a fix-all solution for when you hop over to your Mac, and if you're not in a hurry, you can stick around and learn how to dominate Tim Cook's latest hunka junk.<br><br>
+
+				<img src="../assets/pod-blog-assets/think-mark-meme.jpg" class="horizontal-image centered-image" alt="Think Mark Think meme, with Apple as Omni-Man and Windows as Mark"><br>
+				<div class="image-caption">"Think different Mark, THINK DIFFERENT!"</div><br><br>
+				<p>&emsp;Pro tip: Play "Karma Police" by Radiohead as you fail to compile for iOS. It's more dramatic.</p>
+			</p>
+		</section>
+
+        <section class="article max-width">
+			<h2>CocoaPods Errors</h2><br>
+
+			&emsp;We're fixing a few problems with CocoaPods with the steps below. The most common of which is <code class="inline" style="color:crimson">"Error running pod install"</code>. But errors with pods can also come in a variety of other forms. For example,
+			the pesky little error that got me to REALLY master these commands for the blog was <code class="inline" style="color:crimson">spec repo not up to date</code>. And running <code class="inline">pod repo update</code> was just spawning other
+			errors. If the word 'pod' appears prominently in your error, odds are you're dealing with CocoaPods.<br><br><br>
+
+            <h2>Solution</h2><br>
+            &emsp;Here's a sequence of terminal commands that you can run in VS Code in order to fully reset the pods for your project when you hop on over from your main rig to your Mac. This is assuming your <code class="inline">flutter doctor</code> command gives
+			you all green checks and you already have CocoaPods installed.<br><br>
+
+			<div class="code-container">
+				<code>
+					cd ios<br>
+					rm Podfile<br>
+					rm Podfile.lock<br>
+					flutter clean<br>
+					flutter pub get<br>
+					pod repo update<br>
+					pod install
+				</code>
+			</div><br><br>
+			
+			&emsp;If you get an error telling you RunnerTests was not found, a quick fix is to comment out these lines in your Podfile (not Podfile.lock) and then run <code class="inline">pod install</code> again:<br><br>
+
+			<div class="code-container">
+				<code>
+					# target 'RunnerTests' do<br>
+					#   inherit! :search_paths<br>
+					# end
+				</code>
+			</div><br><br>
+
+			&emsp;Finally, go back to your home directory, open up an emulator and run your app using the commands below:<br><br>
+
+			<div class="code-container">
+				<code>
+					cd ../<br>
+					open -a Simulator.app<br>
+					# Make sure VS Code has the simulator selected as your device inbetween these steps<br>
+					flutter run
+				</code>
+			</div><br><br>
+
+			&emsp;And there you have it. <span style="color:greenyellow">Solved!</span>
+        </section>
+
+        <section class="article max-width">
+			<h1>Why it works</h2><br>
+
+			<img src="https://i.kym-cdn.com/photos/images/newsfeed/002/546/187/fb1.jpg" class="vertical-image centered-image" alt="Charlie Day crazily pointing at conspiracy theory board."><br>
+			<div class="image-caption">Now let's talk about the Pods. Can we talk about the Pods please, Mac?</div><br><br>
+
+			&emsp;I have spent an absurd amount of time just trying to get my app to compile for iOS when it works juuuust fine on Android. That's in great part due to 'CocoaPods'. In part, it's my fault for over-relying on the good folks at Stack Overflow. No
+			solution they provided would work, which led me to dig deep into CocoaPods this past weekend, and learn about them. The outcome is I understand the meaning of errors, I learned what my problem was, and come up with a solution. The more you know about a
+			technology, the better you'll be at solving problems for it.<br><br>
+
+			&emsp;My setup is a desktop PC running Windows 10, along with a Macbook Air M2 as a secondary. I use GitHub to keep my work consistent accross both computers. Similar issues to mine will happen when having a Linux as a primary.<br><br>
+
+			<h2>What is CocoaPods?</h2><br>
+
+			&emsp;CocoaPods is a dependency manager exclusive to MacOS. Basically, it's like pub get but for iOS. Pub gets the dependencies for your Flutter project, but CocoaPods is gonna make sure they're on iOS. Each dependency is called a 'Pod'. It's built
+			using Ruby, which is why when you install it, you use the 'gem' keyword.<br><br>
+
+			&emsp;The Files and Commands sections of this article are basically my notes and deductions from watching the video below. Feel free to watch it, and then skip those. Or you can just read if you want to know how they're connected to Flutter.<br><br>
+
+			<iframe class="centered-image" width="560" height="315" src="https://www.youtube.com/embed/QLm_3Ny_Fkg?si=pcqReuCbB458ROKz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+			<br><br>
+
+			<h2>Files and Directories</h2><br>
+			<img class="vertical-image centered-image" src="../assets/pod-blog-assets/ios-directory.jpg"><br><br>
+			&emsp;<strong>/Pods</strong> - Contains local info for pods, along with subdirectories and pod specs. You usually want to keep this in your git ignore. Created in a Flutter project when you run Flutter pub add &lt;PACKAGE_NAME&gt;<br><br>
+			&emsp;<strong>Podfile</strong> - Describes the dependencies of the targets of one or more Xcode projects. Make sure this file is included in source control. In Flutter, this file is generated in your iOS directory when installing a package which has a
+			pod (<code class="inline">flutter pub add &lt;DEPENDENCY_NAME&gt;</code>). Also created when running <code class="inline">flutter pub get</code>.<br><br>
+			&emsp;<strong>Podfile.lock</strong> - Note the '.lock', as this file is different from the one just called 'Podfile'. Pretty dumb naming if you ask me, but that's the way they went with. A registry of the pods should have installed for the project along
+			with their version. This should always be pushed to source control. That way, pods can be consistent for different developers, or across different machines.<br>
+			&emsp;&emsp;<strong>Checksum</strong> - A hash made from all your dependencies. This String is thrown at the bottom of Podfile.lock and compared to one in Manifest.lock.<br><br>
+			&emsp;<strong>Manifest.lock</strong> - Found in /Pods directory. A hash made from all your dependencies. This String is thrown at the bottom of Podfile.lock and compared to one in Manifest.lock.
+			&emsp;A copy of Podfile.lock. generated when you run the command pod install. What's the point of this? Well, pods aren't usually pushed to version control, so Manifest.lock ensures that pods match the lock file before running. Otherwise, the build will
+			fail.<br><br><br>
+
+			<h2>Commands</h2><br>
+
+			&emsp;<code class="inline">pod install</code> - A command to install pods (duh). To be used every time we edit our podfile to add, update, or remove a pod. Does the following on run:
+			<ul>
+				<li>Downloads and installs new pods</li>
+				<li>Writes the installed version in Podfile.lock</li>
+			</ul>
+			&emsp;The command only resolves dependencies for pods NOT already listed in Podfile.lock, which is why a bunch of blogs will tell you to delete Podfile.lock and then run pod install. If the pod is already listed in .lock file, the command downloads the
+			version listed in .lock without trying to check if a newer version is available. Else, it searches for the version that matches what is described in the Podfile (NOT Podfile.lock). If there is no version mentioned there, the latest version is downloaded,
+			installed, and registered in Podfile.lock.<br><br>
+
+			&emsp;<code class="inline">pod outdated</code> - Lists pods that have a newer version availabl, but does NOT update the pods to their newer version.<br><br>
+
+			&emsp;<code class="inline">pod update &lt;PODNAME&gt;</code> - Updates a specific pod, or all pods if you don't specify a pod name. Works as long as the new version matches the restriction. When you run the command, the command will print out what pods will be
+			updated, and then prompt asking if you want to go through with it. Pod names will be highlighted in three colors, each meaning something different:
+			<ul>
+				<li><span style="color: crimson;">Red</span> - Pod will not be updated due to Podfile restrictions.</li>
+				<li><span style="color: yellowgreen;">Green</span> - Pod will be updated to the latest version.</li>
+				<li><span style="color: turquoise;">Blue</span> - Pod will be updated, but not to the latest version because of Podfile restrictions.</li>
+			</ul><br><br>
+			&emsp;Keep in mind you can't update a pod past what's on the spec repo. And don't worry, you didn't skip anything. I'll be talking about the spec repo in a bit.<br><br>
+
+			&emsp;<code class="inline">pod repo update &lt;REPO_NAME&gt;</code> - Updates the local clone of the spec-repo &lt;REPO_NAME&gt;. If you don't specify a name, the command updates all local spec repos. And don't worry, that doesn't sound like English to me either.
+			I'll tell you more about this in a bit.<br><br>
+
+			<h2>Pods on Pods on Pods...</h2><br>
+			<img src="https://media1.giphy.com/media/W80Y9y1XwiL84/giphy.gif?cid=6c09b952gp3yw8bdda7mngpzpu2jay7xtd0t8fte3oo0cybh&ep=v1_gifs_search&rid=giphy.gif&ct=g" alt="Gif of Shaquille O'Neal and Cat shaking around."><br>
+			<div class="image-caption">...on divs on divs on divs on divs...</div><br><br>
+			
+			&emsp;This is part of what makes pods slightly tricky. Pods themselves can depend on other pods. Say Pod A relies on Pod B. Now, let's say the people who maintain Pod B put out an update. That update might not be compatible with Pod A. So maybe the
+			latest version of Pod B is incompatible. That's why Podfile.lock is important. In .lock, we specify exactly what versions to use and keep them consistent. This is also where spec repos come into play.<br><br>
+
+			<h2>What is a Spec?</h2><br>
+			&emsp;Before we jump into spec repos, we have to know what exactly specs are. 'Specs' is short for specifications, and specifications describe traits for pod versions. A spec file is in json format, and contains traits for a version of a pod, most
+			importantly, a source where you can download the pod, a source file subdirectory, and and dependencies. It's also got some other traits, like a name, a version, a summary, a description a license... You can look at them yourself when I tell you about
+			spec repos.<br><br>
+			&emsp;What's the importance of these? Well, the folder where these specs are kept is where your pod commands often look in order to throw errors, find incompatibilities, and generally mess your day up. That's why a lot of posts on Stack Overflow will
+			tell you that your problems will be fixed by running pod repo update. It will update the specs for your pods, and hopefully tell the command line "hey, it turns out these two pod versions are ACTUALLY compatible". And sometimes it works.
+			Sometimes.<br><br>
+
+			<h2>What is a Spec Repo?</h2><br>
+			<img src="../assets/pod-blog-assets/spec-repo.png" alt="Spec Repo.png" class="horizontal-image centered-image"><br><br>
+			&emsp;Long story short, it's where the specs for your pods are stored. That's it, that's all you need to know about these.<br><br>
+			&emsp;Buuuuuut, if you've got time and want to know how this works... There's a CocoaPods Github repo called <a href="https://github.com/CocoaPods/Specs">Specs</a>. If you snoop around the repo, you'll find that there are 34,941
+			contributors. Lots of them, right? That's because every spec for every repo is stored here. Open up the Github page on your browser, click on the 'Specs' folder, and follow along with me.<br><br>
+			&emsp;A spec repo is not a part of your iOS project, OR Flutter project, which means your specs show options for every pod on every project on your machine. Spec repos are located in /Users/&lt;YOUR USERNAME&gt;/.cocoapods/repos. If you can't find
+			Users/&lt;YOUR USERNAME&gt;/, that's because it's your home folder. Or at least is is on my M2 Air. You can verify by going to Users and Groups in the settings app, then ctrl+clicking on your user profile, clicking advanced options, and checking what
+			your home directory is set to. once you get to the repos directory, you'll probably see a directory called 'trunk', although word has it the folder can have another name. If you go inside 'trunk', you'll notice a folder called 'Specs'. Where else did
+			we see this? Right! On the Github page. What you'll notice is that every path that you can take inside your local Specs folder is a path you can replicate on the Github repo. It doesn't work the other way around though. You can't go down every path in
+			the Github repo on your local machine. Unless you're a psycho who has every single pod for some reason. But I'll assume that you're not.<br><br>
+			&emsp;At some point when installing a pod, the specs for your pod are cloned from the repo and onto your machine. However, they might get updated on the repo as updates roll in for other dependencies, and as things change. When running pod repo update,
+			you'll be cloning from that Github repo.<br><br>
+
+			<h2>Final Suggestion</h2><br>
+			&emsp;When pulling from source control, if your Podfile or Podfile.lock has changed, run <code class="inline">pod install</code>. That will keep your pods consistent with your team's.<br><br>
+
+			<h2>What about the Non-Mac Flutter Dev?</h2><br>
+			<img src="https://media.tenor.com/DsMaZa5D0VkAAAAM/vaas-vass-montenegro.gif" alt="Vaas Insanity Scene from FarCry 3"><br>
+			<div class="image-caption">POV: An Apple fan kindly explains why his machine is better than yours.</div><br><br>
+			&emsp;Well, all GitHub queries were leading me to no success, and what I failed to notice sooner is that was all due to my setup. I do most of my work outside of my Mac, and that's something I never realized was important until I dove into the details
+			of CocoaPods.<br><br>
+			&emsp;Those of you with a similar workflow, run a little test with me, will you? This is in part the 'Science' part of 'Computer Science'.
+			<ol>
+				<li>Get on your main (Non-Mac) rig, and create a new Flutter project.</li>
+				<li>Open it up in Visual Studio (or whatever IDE)</li>
+				<li>On the IDE's file explorer, expand the iOS folder to see its contents.</li>
+				<li>Now, try <code class="inline">flutter pub add image_cropper</code>. FYI I'm using this dependency because I know it's supposed to throw in a pod.</li>
+			</ol>
+			
+			&emsp;After you run the command, you'll notice that the ios directory remains unchanged. Lame, right? Well, go repeat the same experiment on your Mac. What happens in the iOS folder?<br><br>
+			&emsp;Yeah! Podfile is created... Now run the app on your different machines! You'll notice on your Mac, your iOS folder will now have a Pods subdirectory, as well as a Podfile.lock file. And on your Windows/Linux, it will remain unchanged.<br><br>
+
+			<h2>What in the Steve Jobs is going on?</h2><br>
+			<img class="skinny-vertical-image centered-image" src="https://static.wikia.nocookie.net/southpark/images/9/92/Steve-jobs.png/revision/latest?cb=20171109074627" alt="South Park's version of Steve Jobs"><br><br>
+			&emsp;To my knowledge, neither Windows nor Linux will run any sort of Pod commands. And THAT'S the catch with this workflow. Whenever Flutter is supposed to trigger Pod commands on your machine, it will only do it on a Mac. So every time you
+			install dependencies while on Non-Mac, all the pod work will be ignored, potentially causing massive headaches when you swap over to compile for iOS, or whatever else it is you're building apps for on that sleek piece of two-year-lifespanned
+			metal.<br><br>
+
+			<h2>Why the steps above fix the problem</h2><br>
+			&emsp;The article which made it the closest to my solution told me to use <code class="inline">pod deintegrate</code> and then <code class="inline">pod init</code>. The first command does a few things, but most importantly it deletes the Podfile. The
+			second generates one. But the problem is that the new Podfile is not set up for my Flutter project, and does not point at my targets. So running install after these commands just creates different errors.<br><br>
+			&emsp;<strong>GOAL:</strong> To reset pods without losing the configuration specific to my Flutter project.<br><br>
+
+			<div class="code-container">
+				<code>
+					# First, we move into ios directory<br>
+					cd ios<br><br>
+	
+					# To get rid of Podfile and Podfile.lock<br>
+					rm Podfile<br>
+					rm Podfile.lock<br><br>
+	
+					# Clean all Flutter dependencies so you can pub get them<br>
+					flutter clean<br><br>
+	
+					# In this next command, Pod stuff will be set up for all your Flutter packages.<br><br>
+					flutter pub get<br><br>
+	
+					# Now that CocoaPods knows what dependencies we're using, we want to update our<br>
+					# spec repo specifically for those dependencies.<br>
+					pod repo update<br><br>
+	
+					# Finally, with our Pods reset, but still set up for our project,<br>
+					# we run install.<br>
+					pod install
+				</code>
+			</div><br><br>
+
+			&emsp;If you're working on an old Flutter project, you might get an error saying <code class="inline" style="color:crimson">cannot find target RunnerTests</code>, or something like that. I'm paraphrasing. If you get this issue, an easy fix is to
+			comment out these lines in your Podfile:<br><br>
+
+			<div class="code-container">
+				<code>
+					# target 'RunnerTests' do<br>
+					#   inherit! :search_paths<br>
+					# end
+				</code>
+			</div><br><br>
+
+			&emsp;The thing is that these lines are adding an extra target onto your project, which older versions of Flutter did not create. But honestly, this is an quick solution, but not permanent, because every time you move over to your Mac, you'll have to
+			comment out those lines again. The better solution is to actually create a target RunnerTests. Unfortunately, I have not successfully done this. At least not yet. Give me another week and I'll probably have it down.<br><br>
+
+			&emsp;This should clear a bunch of your problems. I know dealing with Mac was a little frustrating for me, so hopefully, now that I have suffered through this, you don't have to.
+
+
+
+        </section>
+
+		<footer>
+			<img src="../assets/full-sd-logo.png" alt="Saadin Dassum logo">
+			<span>Created by<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> Saadin Dassum </a> 
+				<span class="far fa-copyright"></span>2024 All Rights Reserved.
+			</span>
+			<br>
+		</footer>
+		<script src="script.js"></script>
+	</body>
+	<script>
+		var sgLogo = document.getElementById("sg-logo-desktop");
+		sgLogo.onmouseover = function() {
+			sgLogo.src = "../assets/sg-icon-green.png";
+		}
+		sgLogo.onmouseleave = function() {
+			sgLogo.src = "../assets/sg-icon.png";
+		}
+	</script>
+</html>

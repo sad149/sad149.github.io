@@ -120,6 +120,10 @@ footer img{
     width: 100%;
 }
 
+#articles > a {
+    margin-bottom: 25px;
+}
+
 .article-container {
     clear: both;
     background-color: rgba(42, 42, 42, 0.3);
@@ -133,6 +137,10 @@ footer img{
     width: 100px;
     border-radius: 5px;
     margin-right: 20px;
+}
+
+.article-link {
+    padding-bottom: 25px;
 }
 
 .art-title-container {
@@ -163,8 +171,17 @@ footer img{
     width: 350px;
 }
 
+.skinny-vertical-image {
+    width: 150px;
+}
+
 .horizontal-image {
     width: 500px;
+}
+
+.image-caption {
+    font-style: italic;
+    text-align: center;
 }
 
 
@@ -203,6 +220,10 @@ footer img{
     
     .home-content img {
         width: 100%;
+    }
+
+    .art-title-container > h2 {
+        font-size: 15px;
     }
 
     /*about*/

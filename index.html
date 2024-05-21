@@ -73,16 +73,30 @@
 		</section>
 		<section class="max-width sample-code">
 			<div class="code-container">
-				<code markup="tt" language-java>
+				<code>
 					System.out.println("Que más?");
 				</code>
 			</div>
 		</section>
+
 		<section id="articles" class="max-width">
 			<h1>Articles</h1><br><br>
+			<a href="blogs/cocoa-pods-for-ms.html">
+				<div class="article-container">
+					<img src="assets/pod-blog-assets/pod-thumb.png.jpg" class="article-thumbnail" alt="Angry Apple Fan.png">
+					<div class="art-title-container">
+						<h2>CocoaPods for the Non-Mac Developer</h2>
+						May 20, 2024
+					</div>
+				</div>
+			</a>
+			<br><br>
+			<!-- Yeah yeah, ya caught me being lazy and using BR's instead of styling the element.
+			You'd do it too if you were as pressed on time as I am! I'll try and figure it out on
+			a next update with a shorter blog.-->
 			<a href="blogs/avd-troubleshooting.html">
 				<div class="article-container">
-					<img src="assets/avd-blog-assets/dead-avd.png" class="article-thumbnail">
+					<img src="assets/avd-blog-assets/dead-avd.png" class="article-thumbnail" alt="Dead AVD.png">
 					<div class="art-title-container">
 						<h2>AVD Troubleshooting</h2>
 						April 14, 2024
@@ -98,14 +112,14 @@
 			<br>
 		</footer>
 		<script src="script.js"></script>
+		<script>
+			var sgLogo = document.getElementById("sg-logo-desktop");
+			sgLogo.onmouseover = function() {
+				sgLogo.src = "assets/sg-icon-green.png";
+			}
+			sgLogo.onmouseleave = function() {
+				sgLogo.src = "assets/sg-icon.png";
+			}
+		</script>
 	</body>
-	<script>
-		var sgLogo = document.getElementById("sg-logo-desktop");
-		sgLogo.onmouseover = function() {
-			sgLogo.src = "assets/sg-icon-green.png";
-		}
-		sgLogo.onmouseleave = function() {
-			sgLogo.src = "assets/sg-icon.png";
-		}
-	</script>
 </html>
