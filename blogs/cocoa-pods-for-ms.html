@@ -151,9 +151,8 @@
 			&emsp;<strong>Podfile.lock</strong> - Note the '.lock', as this file is different from the one just called 'Podfile'. Pretty dumb naming if you ask me, but that's the way they went with. A registry of the pods should have installed for the project along
 			with their version. This should always be pushed to source control. That way, pods can be consistent for different developers, or across different machines.<br>
 			&emsp;&emsp;<strong>Checksum</strong> - A hash made from all your dependencies. This String is thrown at the bottom of Podfile.lock and compared to one in Manifest.lock.<br><br>
-			&emsp;<strong>Manifest.lock</strong> - Found in /Pods directory. A hash made from all your dependencies. This String is thrown at the bottom of Podfile.lock and compared to one in Manifest.lock.
-			&emsp;A copy of Podfile.lock. generated when you run the command pod install. What's the point of this? Well, pods aren't usually pushed to version control, so Manifest.lock ensures that pods match the lock file before running. Otherwise, the build will
-			fail.<br><br><br>
+			&emsp;<strong>Manifest.lock</strong> - Found in /Pods directory. A copy of Podfile.lock. generated when you run the command pod install. What's the point of this? Well, pods aren't usually pushed to version control, so Manifest.lock ensures that pods
+			match the lock file before running. Otherwise, the build will fail.<br><br><br>
 
 			<h2>Commands</h2><br>
 
